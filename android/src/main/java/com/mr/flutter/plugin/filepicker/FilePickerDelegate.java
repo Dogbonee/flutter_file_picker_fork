@@ -265,7 +265,8 @@ public class FilePickerDelegate implements PluginRegistry.ActivityResultListener
                 allowedExtensions = type.split(",");
             }
 
-            if (allowedExtensions != null) {
+            //intent.setType(allowedExtensions.length == 1 ? allowedExtensions[0] : "*/*");
+            if (allowedExtensions != null && allowedExtensions.length > 0) {
                 intent.putExtra(Intent.EXTRA_MIME_TYPES, allowedExtensions);
             }
         }
